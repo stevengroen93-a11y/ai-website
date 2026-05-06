@@ -2884,7 +2884,17 @@
       transition: border-color 0.25s;
     }
     .pain-card:hover { border-color: rgba(200,255,0,0.2); }
-    .pain-icon { display: none; }
+    .pain-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(200,255,0,0.08);
+      flex-shrink: 0;
+    }
+    .pain-icon svg { width: 18px; height: 18px; stroke: var(--accent); stroke-width: 2; }
     .pain-text { display: flex; flex-direction: column; gap: 6px; }
     .pain-text strong { font-size: 0.85rem; color: var(--white); font-weight: 600; line-height: 1.4; }
     .pain-text span { font-size: 0.72rem; color: var(--muted); }
@@ -3067,8 +3077,12 @@
       transition: border-color 0.25s, transform 0.25s;
     }
     .use-case-card:hover {
-      border-color: rgba(200,255,0,0.25);
+      border-color: rgba(200,255,0,0.4);
       transform: translateY(-4px);
+      background: rgba(200,255,0,0.03);
+    }
+    .use-case-card:hover .uc-header {
+      background: rgba(200,255,0,0.08);
     }
     .uc-img {
       width: 100%;
@@ -3117,6 +3131,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
       background: rgba(255,255,255,0.02);
       flex-shrink: 0;
+      transition: background 0.25s;
     }
     .uc-header-icon {
       display: flex;
@@ -3164,8 +3179,9 @@
     }
     .industries-label {
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.06em;
+      color: var(--accent);
       text-transform: uppercase;
       color: var(--muted);
       white-space: nowrap;
@@ -3331,7 +3347,7 @@
         <li><a href="#" onclick="navigate('about'); return false;" data-page="about">Over ons</a></li>
         <li><a href="#" onclick="navigate('contact'); return false;" data-page="contact">Contact</a></li>
       </ul>
-      <a href="#" class="nav-cta" onclick="navigate('contact'); return false;">Gratis gesprek →</a>
+      <a href="#" class="nav-cta" onclick="navigate('contact'); return false;">Vrijblijvend gesprek →</a>
       <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
         <span></span><span></span><span></span>
       </button>
@@ -3344,7 +3360,7 @@
     <a href="#" onclick="navigate('cases'); toggleMobileMenu(); return false;">Cases</a>
     <a href="#" onclick="navigate('about'); toggleMobileMenu(); return false;">Over ons</a>
     <a href="#" onclick="navigate('contact'); toggleMobileMenu(); return false;">Contact</a>
-    <a href="#" class="nav-cta" onclick="navigate('contact'); toggleMobileMenu(); return false;">Gratis gesprek →</a>
+    <a href="#" class="nav-cta" onclick="navigate('contact'); toggleMobileMenu(); return false;">Vrijblijvend gesprek →</a>
   </div>
 
   <!-- ══════════════════════════════════════
@@ -3376,10 +3392,10 @@
               Sneller en<br>efficiënter werken<br>door <em>slimme<br><span class="sketch-underline">automatisering.</span></em>
             </h1>
             <p class="hero-sub reveal reveal-delay-2">
-              Neutron Studio bouwt op maat gemaakte AI-systemen voor ondernemers. Van factuurverwerking tot volledige CRM-automatisering — binnen 1 à 2 weken live.
+              Neutron Studio bouwt op maat gemaakte AI-systemen voor ondernemers. Van factuurverwerking tot volledige CRM-automatisering, binnen 1 à 2 weken live.
             </p>
             <div class="hero-ctas reveal reveal-delay-3">
-              <a href="#" class="btn-primary" onclick="navigate('contact'); return false;">Plan gratis gesprek →</a>
+              <a href="#" class="btn-primary" onclick="navigate('contact'); return false;">Plan vrijblijvend gesprek →</a>
               <a href="#" class="btn-secondary" onclick="navigate('cases'); return false;">Bekijk cases</a>
             </div>
             <div class="hero-proof reveal reveal-delay-4">
@@ -3412,8 +3428,8 @@
                 <div class="hero-stat-lbl">weken van gesprek naar live</div>
               </div>
               <div class="hero-stat">
-                <div class="hero-stat-num">∞</div>
-                <div class="hero-stat-lbl">uur per maand bespaard</div>
+                <div class="hero-stat-num">10+</div>
+                <div class="hero-stat-lbl">uur per week bespaard</div>
               </div>
             </div>
           </div>
@@ -3459,7 +3475,7 @@
       <div class="container">
         <div class="reveal"><span class="section-tag">Het probleem</span></div>
         <h2 class="section-title reveal reveal-delay-1">Het is 2026. En jij bent nog steeds<br>bezig met taken die geen mens meer hoeft te doen.</h2>
-        <p class="section-sub reveal reveal-delay-2">Je werkweek loopt vol met dingen die niet jouw vakwerk zijn. AI kan veel van die taken overnemen — alleen weet je niet waar te beginnen.</p>
+        <p class="section-sub reveal reveal-delay-2">Je werkweek loopt vol met dingen die niet jouw vakwerk zijn. AI kan veel van die taken overnemen, alleen weet je niet waar te beginnen.</p>
 
         <div class="pain-grid">
           <div class="pain-card reveal reveal-delay-1">
@@ -3534,9 +3550,7 @@
               </div>
             </div>
             <div class="uc-body">
-              <span class="uc-tag">● WhatsApp AI</span>
-              <h3 class="uc-title">Klanten reageren sneller dan jij kunt.</h3>
-              <div class="uc-result">— Geen verloren leads meer.</div>
+              <div class="uc-result">Geen verloren leads meer.</div>
             </div>
           </div>
 
@@ -3563,7 +3577,7 @@
             <div class="uc-body">
               <span class="uc-tag">● Offertes</span>
               <h3 class="uc-title">Van opdracht naar offerte in minder dan 2 minuten.</h3>
-              <div class="uc-result">— 3x meer offertes, zelfde team.</div>
+              <div class="uc-result">3x meer offertes, zelfde team.</div>
             </div>
           </div>
 
@@ -3587,7 +3601,7 @@
             <div class="uc-body">
               <span class="uc-tag">● Boekhouding</span>
               <h3 class="uc-title">Bonnetjes inscannen. Rest doet de AI.</h3>
-              <div class="uc-result">— 4 uur per maand bespaard op administratie.</div>
+              <div class="uc-result">4 uur per maand bespaard op administratie.</div>
             </div>
           </div>
 
@@ -3619,7 +3633,7 @@
             <div class="uc-body">
               <span class="uc-tag">● CRM</span>
               <h3 class="uc-title">Nooit meer een lead die door de mazen valt.</h3>
-              <div class="uc-result">— Automatische follow-up zonder eraan te denken.</div>
+              <div class="uc-result">Automatische follow-up zonder eraan te denken.</div>
             </div>
           </div>
 
@@ -3654,7 +3668,7 @@
             <div class="uc-body">
               <span class="uc-tag">● Content AI</span>
               <h3 class="uc-title">Elke week posts. Zonder er zelf over na te denken.</h3>
-              <div class="uc-result">— 3x meer klanten bediend, zelfde team.</div>
+              <div class="uc-result">3x meer klanten bediend, zelfde team.</div>
             </div>
           </div>
 
@@ -3678,7 +3692,7 @@
             <div class="uc-body">
               <span class="uc-tag">● Receptie AI</span>
               <h3 class="uc-title">De receptie die nooit ziek is.</h3>
-              <div class="uc-result">— Eén medewerker minder nodig voor klantcontact.</div>
+              <div class="uc-result">Eén medewerker minder nodig voor klantcontact.</div>
             </div>
           </div>
 
@@ -3773,8 +3787,8 @@
       <div class="container">
         <div class="missie-inner reveal">
           <div class="missie-tag">Onze missie</div>
-          <h2 class="missie-title">Wij helpen ondernemers sneller en efficiënter werken — door <em class="accent">slimme automatisering.</em></h2>
-          <p class="missie-sub">Elke week gaat er bij ondernemers kostbare tijd verloren aan taken die een systeem ook kan doen. Wij bouwen die systemen — op maat, snel, en zonder gedoe. Zodat jij je energie kunt steken in wat je écht goed in bent.</p>
+          <h2 class="missie-title">Tijd besparen door <em class="accent">slimme automatiseringen.</em></h2>
+          <p class="missie-sub">Elke week verliezen ondernemers uren aan taken die een automatisch systeem ook kan doen. Wij bouwen die systemen op maat, snel en zonder gedoe. Zodat jij je focust op groei en geen klanten meer verliest doordat je te laat reageert.</p>
           <div class="missie-pillars">
             <div class="missie-pillar">
               <div class="missie-pillar-icon"><i data-lucide="handshake"></i></div>
@@ -3784,7 +3798,7 @@
             <div class="missie-pillar">
               <div class="missie-pillar-icon"><i data-lucide="zap"></i></div>
               <div class="missie-pillar-title">Efficiënter groeien</div>
-              <div class="missie-pillar-desc">Meer klanten bedienen, sneller reageren en minder fouten — zonder extra mensen.</div>
+              <div class="missie-pillar-desc">Meer klanten bedienen, sneller reageren en minder fouten, zonder extra mensen.</div>
             </div>
             <div class="missie-pillar">
               <div class="missie-pillar-icon"><i data-lucide="users"></i></div>
@@ -3836,12 +3850,12 @@
 
         <!-- CTA -->
         <div style="text-align:center; margin-top: 100px;" class="reveal">
-          <span class="section-tag" style="justify-content: center;">Bespaar direct</span>
-          <h2 class="section-title" style="max-width: 900px; margin: 24px auto 20px; white-space: nowrap;"><span style="color: var(--accent);">Bespaar</span> 8 uur per week zonder extra personeel.</h2>
+          <h2 class="section-title" style="max-width: 900px; margin: 0 auto 16px; white-space: nowrap;"><span style="color: var(--accent);">Bespaar direct</span> 8 uur per week.</h2>
+          <p style="color: var(--muted); font-size: 1.15rem; margin: 0 auto 12px;">Zonder extra personeel.</p>
           <p class="section-sub" style="margin: 0 auto 40px;">
-            Plan een gratis gesprek van 30 minuten en we laten je zien welke taken je nooit meer hoeft te doen.
+            Plan een vrijblijvend gesprek van 30 minuten en we laten je zien welke taken je nooit meer hoeft te doen.
           </p>
-          <a href="#" class="btn-primary" onclick="navigate('contact'); return false;">Plan gratis gesprek →</a>
+          <a href="#" class="btn-primary" onclick="navigate('contact'); return false;">Plan vrijblijvend gesprek →</a>
         </div>
       </div>
     </section>
@@ -4033,9 +4047,9 @@
           <span class="section-tag" style="justify-content: center;">Jij ook?</span>
           <h2 class="section-title" style="max-width: 600px; margin: 0 auto 20px;">Wat zou jij doen met 8 uur extra per week?</h2>
           <p class="section-sub" style="margin: 0 auto 40px;">
-            Plan een gratis gesprek en we kijken samen welke tijdsverspiller we als eerste aanpakken.
+            Plan een vrijblijvend gesprek en we kijken samen welke tijdsverspiller we als eerste aanpakken.
           </p>
-          <a href="#" class="btn-primary" onclick="navigate('contact'); return false;">Plan gratis gesprek →</a>
+          <a href="#" class="btn-primary" onclick="navigate('contact'); return false;">Plan vrijblijvend gesprek →</a>
         </div>
 
       </div>
@@ -4107,8 +4121,8 @@
       <div class="container">
         <div class="missie-inner reveal">
           <div class="missie-tag">Onze missie</div>
-          <h2 class="missie-title">Wij helpen ondernemers sneller en efficiënter werken — door <em class="accent">slimme automatisering.</em></h2>
-          <p class="missie-sub">Elke week gaat er bij ondernemers kostbare tijd verloren aan taken die een systeem ook kan doen. Wij bouwen die systemen — op maat, snel, en zonder gedoe. Zodat jij je energie kunt steken in wat je écht goed in bent.</p>
+          <h2 class="missie-title">Tijd besparen door <em class="accent">slimme automatiseringen.</em></h2>
+          <p class="missie-sub">Elke week verliezen ondernemers uren aan taken die een automatisch systeem ook kan doen. Wij bouwen die systemen op maat, snel en zonder gedoe. Zodat jij je focust op groei en geen klanten meer verliest doordat je te laat reageert.</p>
           <div class="missie-pillars">
             <div class="missie-pillar">
               <div class="missie-pillar-icon"><i data-lucide="handshake"></i></div>
@@ -4118,7 +4132,7 @@
             <div class="missie-pillar">
               <div class="missie-pillar-icon"><i data-lucide="zap"></i></div>
               <div class="missie-pillar-title">Efficiënter groeien</div>
-              <div class="missie-pillar-desc">Meer klanten bedienen, sneller reageren en minder fouten — zonder extra mensen.</div>
+              <div class="missie-pillar-desc">Meer klanten bedienen, sneller reageren en minder fouten, zonder extra mensen.</div>
             </div>
             <div class="missie-pillar">
               <div class="missie-pillar-icon"><i data-lucide="users"></i></div>
@@ -4241,7 +4255,7 @@
         </div>
 
         <div style="text-align:center; margin-top: 80px;" class="reveal">
-          <a href="#" class="btn-primary" onclick="navigate('contact'); return false;">Plan gratis gesprek →</a>
+          <a href="#" class="btn-primary" onclick="navigate('contact'); return false;">Plan vrijblijvend gesprek →</a>
         </div>
       </div>
     </section>
@@ -4269,7 +4283,7 @@
       <div class="container">
         <span class="section-tag reveal">Geen verplichtingen</span>
         <h1 class="section-title reveal reveal-delay-1" style="font-size: clamp(2.5rem,6vw,5rem); letter-spacing:-0.04em; max-width: 700px;">
-          Plan een gratis gesprek<br>van <em class="accent">30 minuten.</em>
+          Plan een vrijblijvend gesprek<br>van <em class="accent">30 minuten.</em>
         </h1>
         <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 0;">
           Geen verkooppraatje. We luisteren naar jouw situatie en kijken eerlijk of en hoe AI jou kan helpen.
