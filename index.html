@@ -86,13 +86,11 @@
       gap: 0;
     }
     .nav-logo {
-      font-family: var(--font-head);
-      font-weight: 700;
-      font-size: 1.35rem;
-      letter-spacing: -0.03em;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
     }
-    .nav-logo span { color: var(--accent); }
+    .nav-logo img { height: 32px; width: auto; display: block; }
     .nav-links {
       display: flex;
       gap: 36px;
@@ -2708,13 +2706,8 @@
       gap: 24px;
       flex-wrap: wrap;
     }
-    .footer-logo {
-      font-family: var(--font-head);
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: -0.03em;
-    }
-    .footer-logo span { color: var(--accent); }
+    .footer-logo { display: flex; align-items: center; }
+    .footer-logo img { height: 28px; width: auto; display: block; }
     .footer-copy {
       font-size: 0.85rem;
       color: var(--muted);
@@ -3343,7 +3336,7 @@
   ══════════════════════════════════════ -->
   <nav id="main-nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo" onclick="navigate('home'); return false;"><span>Orange</span> Agency</a>
+      <a href="#" class="nav-logo" onclick="navigate('home'); return false;"><img src="logo/logo-orange-agency.png" alt="Orange Agency" /></a>
       <ul class="nav-links">
         <li><a href="#" onclick="navigate('home'); return false;" data-page="home">Home</a></li>
         <li><a href="#" onclick="navigate('cases'); return false;" data-page="cases">Cases</a></li>
@@ -3864,7 +3857,7 @@
     <!-- Footer -->
     <footer>
       <div class="footer-inner">
-        <div class="footer-logo"><span>Orange</span> Agency</div>
+        <div class="footer-logo"><img src="logo/logo-orange-agency.png" alt="Orange Agency" /></div>
         <span class="footer-copy">© 2025 Orange Agency · Amsterdam · KVK: [KVK_NUMMER]</span>
         <div class="footer-links">
           <a href="#" onclick="navigate('cases'); return false;">Cases</a>
@@ -4058,7 +4051,7 @@
 
     <footer>
       <div class="footer-inner">
-        <div class="footer-logo"><span>Orange</span> Agency</div>
+        <div class="footer-logo"><img src="logo/logo-orange-agency.png" alt="Orange Agency" /></div>
         <span class="footer-copy">© 2025 Orange Agency · Amsterdam · KVK: [KVK_NUMMER]</span>
         <div class="footer-links">
           <a href="#" onclick="navigate('home'); return false;">Home</a>
@@ -4260,7 +4253,7 @@
 
     <footer>
       <div class="footer-inner">
-        <div class="footer-logo"><span>Orange</span> Agency</div>
+        <div class="footer-logo"><img src="logo/logo-orange-agency.png" alt="Orange Agency" /></div>
         <span class="footer-copy">© 2025 Orange Agency · Amsterdam · KVK: [KVK_NUMMER]</span>
         <div class="footer-links">
           <a href="#" onclick="navigate('home'); return false;">Home</a>
@@ -4461,7 +4454,7 @@
 
     <footer>
       <div class="footer-inner">
-        <div class="footer-logo"><span>Orange</span> Agency</div>
+        <div class="footer-logo"><img src="logo/logo-orange-agency.png" alt="Orange Agency" /></div>
         <span class="footer-copy">© 2025 Orange Agency · Amsterdam · KVK: [KVK_NUMMER]</span>
         <div class="footer-links">
           <a href="#" onclick="navigate('home'); return false;">Home</a>
