@@ -3061,9 +3061,32 @@
       transition: border-color 0.25s, transform 0.25s;
     }
     .use-case-card:hover {
-      border-color: rgba(255,98,0,0.25);
+      border-color: rgba(255,98,0,0.35);
       transform: translateY(-4px);
+      background: rgba(255,98,0,0.02);
     }
+    .use-case-card:hover .uc-header {
+      background: rgba(255,98,0,0.07);
+    }
+    .use-case-card:hover .uc-img {
+      background: rgba(255,98,0,0.05);
+      border-bottom-color: rgba(255,98,0,0.12);
+    }
+    .use-case-card:hover .ucm {
+      background: rgba(255,98,0,0.06);
+    }
+    .use-case-card:hover .ucm-chat-bar,
+    .use-case-card:hover .ucm-doc-header,
+    .use-case-card:hover .ucm-bk-header,
+    .use-case-card:hover .ucm-crm-head,
+    .use-case-card:hover .ucm-cal-header,
+    .use-case-card:hover .ucm-rec-bar {
+      background: rgba(255,98,0,0.10);
+    }
+    .use-case-card:hover .ucm-chat-dot { background: var(--accent); }
+    .use-case-card:hover .ucm-doc-logo { background: rgba(255,98,0,0.20); color: var(--accent); }
+    .use-case-card:hover .ucm-ai-badge { background: var(--accent); color: #fff; }
+    .use-case-card:hover .ucm-msg-out { background: rgba(255,98,0,0.12); border-color: rgba(255,98,0,0.2); }
     .uc-img {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -3076,6 +3099,7 @@
       gap: 8px;
       color: var(--muted);
       position: relative;
+      transition: background 0.25s, border-color 0.25s;
     }
     .uc-img i[data-lucide] {
       width: 32px;
@@ -3224,6 +3248,7 @@
       gap: 10px;
       font-size: 0.72rem;
       color: var(--light);
+      transition: background 0.25s;
     }
 
     /* --- WhatsApp Chat --- */
