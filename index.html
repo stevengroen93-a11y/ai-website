@@ -1399,10 +1399,9 @@
       position: relative;
       z-index: 1;
       padding: 56px 0 44px;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 60px;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      max-width: 760px;
     }
     .hero-left { display: flex; flex-direction: column; }
     .hero-right {
@@ -3391,27 +3390,6 @@
             </div>
           </div>
 
-          <!-- Right: team photo + stats -->
-          <div class="hero-right reveal reveal-delay-2">
-            <div class="hero-team-photo">
-              <img src="team/team2.png" alt="Orange Agency team"
-                onerror="this.src='team/team.png';" />
-            </div>
-            <div class="hero-stats-row">
-              <div class="hero-stat">
-                <div class="hero-stat-num">12+</div>
-                <div class="hero-stat-lbl">ondernemers geholpen</div>
-              </div>
-              <div class="hero-stat">
-                <div class="hero-stat-num">1–2</div>
-                <div class="hero-stat-lbl">weken van gesprek naar live</div>
-              </div>
-              <div class="hero-stat">
-                <div class="hero-stat-num">∞</div>
-                <div class="hero-stat-lbl">uur per maand bespaard</div>
-              </div>
-            </div>
-          </div>
 
         </div>
       </div>
